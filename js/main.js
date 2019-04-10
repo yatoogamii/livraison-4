@@ -79,12 +79,6 @@ carousel.onclick = function(event) {
       count++;
       toggleClassHidden(verifyCount(arrImg, count));
       break;
-  }
-}
-carousel.onclick = function(event) {
-
-  console.log(event.target);
-  switch (event.target.classList[3]) {
     case "checkbox-active__icon-previous":
       toggleClassHidden(count);
       count--;
@@ -104,7 +98,6 @@ carousel.onclick = function(event) {
 
 carouselSecond.onclick = function(event) {
 
-  console.log(event.target);
   let active = figure.querySelector("img:not(.carousel__img-second--hidden)");
 
   switch (event.target) {
