@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 ///////////////////
-//  my carousel  //
+//  first carousel  //
 ///////////////////
  
 let carousel = document.getElementsByClassName('carousel')[0];
@@ -25,18 +25,18 @@ let ps = document.getElementsByTagName('p');
 ////////////////////////////////////////////////////////////////////////
 
 ///////////////////
-//  my function  //
+//  first function  //
 ///////////////////
 
   function toggleClassHidden(index) {
     return arrImg[index].classList.toggle('carousel__img--hidden');
   }
 
-  function verifyCount(arr, count) {
-    if (count == arr.length) {
+  function verifyCount(arr, number) {
+    if (number == arr.length) {
       return count = 0;
     }
-    if (count < 0) {
+    if (number < 0) {
       return count = arr.length - 1;
     } else {
       return count;
@@ -63,7 +63,7 @@ function ulChildren(target, number) {
 ////////////////////////////////////////////////////////////////////////
 
  ////////////////
- //  my event  //
+ //  first event  //
  ////////////////
  
 carousel.onclick = function(event) {
@@ -72,14 +72,12 @@ carousel.onclick = function(event) {
     case "carousel__button-previous":
       toggleClassHidden(count);
       count--;
-      count = verifyCount(arrImg, count);
-      toggleClassHidden(count);
+      toggleClassHidden(verifyCount(arrImg, count));
       break;
     case "carousel__button-next":
       toggleClassHidden(count);
       count++;
-      count = verifyCount(arrImg, count);
-      toggleClassHidden(count);
+      toggleClassHidden(verifyCount(arrImg, count));
       break;
   }
 }
