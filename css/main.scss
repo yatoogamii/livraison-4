@@ -130,13 +130,13 @@ body {
 .carousel__button-previous {
   top: 50%;
   left: 7rem;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
 .carousel__button-next {
   top: 50%;
   right: 5rem;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
 }
 
