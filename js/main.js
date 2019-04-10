@@ -14,7 +14,7 @@ let count = 0;
 //  second carousel  //
 ///////////////////////
 
-let carouselsecond = document.getElementsByClassName('carousel-second')[0];
+let carouselSecond = document.getElementsByClassName('carousel-second')[0];
 let figure = document.getElementsByClassName('carousel-figure')[0];
 let carouselList = document.getElementsByClassName('carousel-list')[0];
 let ps = document.getElementsByTagName('p');
@@ -81,12 +81,28 @@ carousel.onclick = function(event) {
       break;
   }
 }
+carousel.onclick = function(event) {
+
+  console.log(event.target);
+  switch (event.target.classList[3]) {
+    case "checkbox-active__icon-previous":
+      toggleClassHidden(count);
+      count--;
+      toggleClassHidden(verifyCount(arrImg, count));
+      break;
+    case "checkbox-active__icon-next":
+      toggleClassHidden(count);
+      count++;
+      toggleClassHidden(verifyCount(arrImg, count));
+      break;
+  }
+}
 
 ////////////////////
 //  second event  //
 ////////////////////
 
-carouselsecond.onclick = function(event) {
+carouselSecond.onclick = function(event) {
 
   console.log(event.target);
   let active = figure.querySelector("img:not(.carousel__img-second--hidden)");
