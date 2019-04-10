@@ -3,19 +3,19 @@
 //                             variables                              //
 ////////////////////////////////////////////////////////////////////////
 
-///////////////////
+//////////////////////
 //  first carousel  //
-///////////////////
+//////////////////////
  
 let carousel = document.getElementsByClassName('carousel')[0];
 let arrImg = Array.from(document.getElementsByClassName('carousel__img'));
 let count = 0;
 
-//////////////////////
+///////////////////////
 //  second carousel  //
-//////////////////////
+///////////////////////
 
-let carouselsecond = document.getElementsByClassName('carousel-second')[0];
+let carouselSecond = document.getElementsByClassName('carousel-second')[0];
 let figure = document.getElementsByClassName('carousel-figure')[0];
 let carouselList = document.getElementsByClassName('carousel-list')[0];
 let ps = document.getElementsByTagName('p');
@@ -25,9 +25,9 @@ let ps = document.getElementsByTagName('p');
 //                             functions                              //
 ////////////////////////////////////////////////////////////////////////
 
-///////////////////
+//////////////////////
 //  first function  //
-///////////////////
+//////////////////////
 
   function toggleClassHidden(index) {
     return arrImg[index].classList.toggle('carousel__img--hidden');
@@ -44,9 +44,9 @@ let ps = document.getElementsByTagName('p');
     }
   }
 
-//////////////////////
+///////////////////////
 //  second function  //
-//////////////////////
+///////////////////////
 
 function ulChildren(target, number) {
 
@@ -59,13 +59,13 @@ function ulChildren(target, number) {
 }
 
 
-////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 //                               events                                //
-////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
- ////////////////
+ ///////////////////
  //  first event  //
- ////////////////
+ ///////////////////
  
 carousel.onclick = function(event) {
 
@@ -80,14 +80,24 @@ carousel.onclick = function(event) {
       count++;
       toggleClassHidden(verifyCount(arrImg, count));
       break;
+    case "checkbox-active__icon-previous":
+      toggleClassHidden(count);
+      count--;
+      toggleClassHidden(verifyCount(arrImg, count));
+      break;
+    case "checkbox-active__icon-next":
+      toggleClassHidden(count);
+      count++;
+      toggleClassHidden(verifyCount(arrImg, count));
+      break;
   }
 }
 
-///////////////////
+////////////////////
 //  second event  //
-///////////////////
+////////////////////
 
-carouselsecond.onclick = function(event) {
+carouselSecond.onclick = function(event) {
 
   let active = figure.querySelector("img:not(.carousel__img-second--hidden)");
 
