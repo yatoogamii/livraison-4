@@ -80,16 +80,6 @@ carousel.onclick = function(event) {
       count++;
       toggleClassHidden(verifyCount(arrImg, count));
       break;
-    case "checkbox-active__icon-previous":
-      toggleClassHidden(count);
-      count--;
-      toggleClassHidden(verifyCount(arrImg, count));
-      break;
-    case "checkbox-active__icon-next":
-      toggleClassHidden(count);
-      count++;
-      toggleClassHidden(verifyCount(arrImg, count));
-      break;
   }
 }
 
