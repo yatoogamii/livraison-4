@@ -161,3 +161,26 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
 }
+
+//////////////////
+//  circle img  //
+//////////////////
+
+.container-circle-img {
+  position: absolute;
+  width: 25%;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .far {
+    color: rgba(210, 0, 0, .8);
+  }
+  .fas {
+    color: rgba(230, 0, 0, 10);
+  }
+}

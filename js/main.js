@@ -7,15 +7,17 @@
 //  first carousel  //
 //////////////////////
  
-let carousel = document.getElementsByClassName('carousel')[0];
+const carousel = document.getElementsByClassName('carousel')[0];
 let arrImg = Array.from(document.getElementsByClassName('carousel__img'));
 let count = 0;
+let containerCircle = document.getElementsByClassName('container-circle-img')[0];
+let iconCircle = containerCircle.getElementsByClassName('fa-circle');
 
 ///////////////////////
 //  second carousel  //
 ///////////////////////
 
-let carouselSecond = document.getElementsByClassName('carousel-second')[0];
+const carouselSecond = document.getElementsByClassName('carousel-second')[0];
 let figure = document.getElementsByClassName('carousel-figure')[0];
 let carouselList = document.getElementsByClassName('carousel-list')[0];
 let ps = document.getElementsByTagName('p');
@@ -44,6 +46,36 @@ let ps = document.getElementsByTagName('p');
     }
   }
 
+  function circleForImg() {
+    for (let i = 0; i < arrImg.length; i++) {
+      // if (arrImg[i] == activeImg) {
+      //   containerCircle.insertAdjacentHTML('beforeEnd', `<i> class="fas fa-circle"></i>`)
+      // } else {
+      //   containerCircle.insertAdjacentHTML('beforeEnd', `<i> class="far fa-circle"></i>`)
+      containerCircle.insertAdjacentHTML('beforeEnd', `<i class="far fa-circle"></i>`)
+      // }
+    }
+  }
+  circleForImg();
+
+  function targetActiveImg() {
+    let activeImg = carousel.querySelector("img:not(.carousel__img--hidden)");
+    let iconActive;
+    for (let i = 0; i < arrImg.length; i++) {
+      if (activeImg == arrImg[i]) {
+        iconActive = iconCircle[i];
+      }
+    }
+    iconActive.classList.toggle('far');
+    iconActive.classList.toggle('fas');
+  }
+  targetActiveImg();
+
+  function clearCircleActiveImg() {
+    let iconNotClear = containerCircle.getElementsByClassName('fas')[0];
+    iconNotClear.classList.toggle('far');
+    iconNotClear.classList.toggle('fas');
+  }
 ///////////////////////
 //  second function  //
 ///////////////////////
@@ -69,6 +101,7 @@ function ulChildren(target, number) {
  
 carousel.onclick = function(event) {
 
+  clearCircleActiveImg();
   switch (event.target.classList[3]) {
     case "carousel__button-previous":
       toggleClassHidden(count);
@@ -81,6 +114,7 @@ carousel.onclick = function(event) {
       toggleClassHidden(verifyCount(arrImg, count));
       break;
   }
+  targetActiveImg();
 }
 
 ////////////////////
