@@ -15,6 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #1d1d1d;
 }
 
 .carousel {
@@ -95,10 +96,10 @@ body {
 .carousel__button {
   font-size: 3.5rem;
   position: absolute;
-  color: rgba(210, 0, 0, 0.8);
+  color: rgba(210, 210, 210, 0.8);
 }
 .carousel__button:hover {
-  color: #e60000;
+  color: #e6e6e6;
 }
 
 .carousel__button-previous {
@@ -127,10 +128,10 @@ body {
   align-items: center;
 }
 .container-circle-img .far {
-  color: rgba(210, 0, 0, 0.8);
+  color: rgba(210, 210, 210, 0.8);
 }
 .container-circle-img .fas {
-  color: #e60000;
+  color: #e6e6e6;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -23,6 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #1d1d1d;
 }
 
 
@@ -141,10 +142,10 @@ body {
 .carousel__button {
   font-size: 3.5rem;
   position: absolute;
-  color: rgba(210, 0, 0, .8);
+  color: rgba(210, 210, 210, .8);
 
   &:hover {
-    color: rgba(230, 0, 0, 10);
+    color: rgba(230, 230, 230, 10);
   }
 }
 
@@ -178,9 +179,9 @@ body {
   align-items: center;
 
   .far {
-    color: rgba(210, 0, 0, .8);
+    color: rgba(210, 210, 210, .8);
   }
   .fas {
-    color: rgba(230, 0, 0, 10);
+    color: rgba(230, 230, 230, 10);
   }
 }
